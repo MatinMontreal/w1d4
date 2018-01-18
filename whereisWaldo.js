@@ -1,10 +1,10 @@
 // The second argument/parameter is expected to be a function
 function findWaldo(arr, found) {
-  for (var i = 0; i < arr.length; i++) {
-    if (arr[i] === "Waldo") {
-      found(i);   // execute callback
+  arr.forEach(function(element, index) {
+    if (element === "Waldo") {
+      found(index);   // execute callback
     }
-  }
+  })
 }
 
 function actionWhenFound(i) {
@@ -15,10 +15,8 @@ findWaldo(["Alice", "Bob", "Waldo", "Winston"], actionWhenFound);
 
 
 
+// A very common implementation of callback functions is with forEach which uses callbacks to allow us to easily iterate through the elements of an array.
 
-// Modify the callback function in the previous example so that logs the index of the array where Waldo is found, ie. "Found Waldo at index 2!".
-// (You will need to modify actionWhenFound to receive the index.)
+// Read about iterating through elements of an array using JavaScript's Array.prototype.forEach() method.
 
-// Once you have this working, remember to commit your changes using Git.
-// A good commit message should be concise and descriptive of the changes you have made.
-// An example commit message: Print the index of Waldo when found.
+// Refactor the function findWaldo to use the forEach() method instead of a for loop.
